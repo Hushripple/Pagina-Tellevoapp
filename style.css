@@ -1,69 +1,51 @@
-/* Colores principales */
-:root {
-  --color-accent: #f39c6b; /* Naranja claro */
-  --color-dark: #1b1b1b;   /* Negro carbón */
-  --color-light: #f5f5f5;  /* Blanco humo */
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-/* Fondo oscuro */
 body {
-  background: linear-gradient(to bottom right, var(--color-dark), var(--color-accent));
-  color: var(--color-light);
-  font-family: Arial, sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
 
-/* Estilo del logo */
-.logo {
-  width: 120px;
-  height: auto;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
+.animate-glow {
+  animation: glow 1.5s infinite alternate ease-in-out;
 }
 
-/* Títulos destacados */
-.text-accent {
-  color: var(--color-accent);
-}
-
-/* Efecto Fade-In para elementos */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-}
-
-.delay-1 {
-  animation-delay: 1s;
-}
-
-.delay-2 {
-  animation-delay: 2s;
-}
-
-/* Efecto de desvanecimiento */
-@keyframes fadeIn {
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 40px #00ccff;
+  }
   to {
-    opacity: 1;
+    text-shadow: 0 0 20px #00ccff, 0 0 40px #00ccff, 0 0 60px #00ccff;
   }
 }
 
-/* Botón personalizado */
-.btn-accent {
-  background-color: var(--color-accent);
-  border: none;
-  color: var(--color-dark);
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+#motd {
+  position: fixed; 
+  top: 0;
+  right: 0;
+  left: -100%; 
+  background: transparent;
+  color: #fff6ff; 
+  font-size: 24px; 
+  font-weight: bold; 
+  white-space: nowrap; 
+  animation: scrollRightToLeft 10s linear infinite; 
+  z-index: 9999; 
+  padding: 10px;
+  text-align: center; 
+
+  text-shadow: 0 0 10px #87b7ff, 0 0 15px #7b8df7, 0 0 20px #70c3fa, 0 0 30px #67b8fa;
 }
 
-.btn-accent:hover {
-  background-color: #e88756; /* Más oscuro al pasar el mouse */
-  color: var(--color-light);
-  transform: scale(1.05);
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(100%); 
+  }
+  100% {
+    transform: translateX(-100%); 
+  }
 }
 
-/* Footer */
-footer {
-  background-color: #222;
-  color: var(--color-light);
+#footer {
+  color:white;
+  text-shadow: 0 0 10px #87b7ff, 0 0 15px #7b8df7, 0 0 20px #70c3fa, 0 0 30px #67b8fa;
+
 }
