@@ -1,5 +1,6 @@
 const bg = [
     'img/bg.png',
+    'img/bg2.jpg',
     'img/bg3.jpg',
     'img/bg6.png',
     'img/bg7.jpg'
